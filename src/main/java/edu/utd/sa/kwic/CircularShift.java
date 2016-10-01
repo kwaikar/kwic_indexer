@@ -103,4 +103,16 @@ public class CircularShift implements CircularShiftInterface {
 			return 0;
 		}
 	}
+	
+	/**
+	 * Returns total number of shifts available for the line 
+	 * @return
+	 */
+	public int csShifts() {
+		if (mapOfCircularShifts!= null) {
+			return mapOfCircularShifts.size();
+		} else {
+			return 0;
+		}
+	}
 }

@@ -45,4 +45,10 @@ public interface CircularShiftInterface {
 	 * @return
 	 */
 	public int csWords(int circularShift) ;
+	/**
+	 * Returns total number of shifts available.
+	 * @return
+	 */
+	public int csShifts() ;
 }
+

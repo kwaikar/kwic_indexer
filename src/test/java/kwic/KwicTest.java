@@ -1,7 +1,10 @@
 package kwic;
 
+import java.util.Collections;
+
 import org.junit.Test;
 
+import edu.utd.sa.kwic.AlphabeticShift;
 import edu.utd.sa.kwic.CircularShift;
 import edu.utd.sa.kwic.CircularShiftInterface;
 import edu.utd.sa.kwic.LineStorage;
@@ -44,4 +47,23 @@ public class KwicTest {
 
 	
 	}
+
+	@Test
+	public void AlphabeticShiftTest()
+	{
+		LineStorage ls = new LineStorage() ;
+		ls.setchar(1, 1, 1, 'h');
+		ls.setchar(1, 1, 2, 'o');
+		ls.setchar(1, 1, 3, 'w');
+		ls.setchar(1, 2, 1, 'a');
+		ls.setchar(1, 2, 2, 'r');
+		ls.setchar(1, 2, 3, 'e');
+		CircularShiftInterface cs = new CircularShift();
+		cs.setup(ls, 1);
+AlphabeticShift as = new AlphabeticShift();
+as.alpha(Collections.singletonList(cs));
+
+	
+	}
+
 }
