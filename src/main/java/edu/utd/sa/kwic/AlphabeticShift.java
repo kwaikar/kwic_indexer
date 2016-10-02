@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * This class is responsible for generating alphabetic shifts of the input.
  */
-public class AlphabeticShift {
+public class AlphabeticShift implements AlphabeticShiftInterface{
 
 	List<String> alphabetizedLines= new ArrayList<String>();
 	/**
@@ -34,7 +34,6 @@ public class AlphabeticShift {
 			}
 		}
 		Collections.sort(alphabetizedLines);
-		System.out.println(alphabetizedLines);
 	}
 	/**
 	 * This function returns sorted circular shift produced in ith iteration
@@ -47,5 +46,18 @@ public class AlphabeticShift {
 			return alphabetizedLines.get(i-1);
 		}
 		return null;
+	}
+	
+	/**
+	 * This method returns number of shifts available
+	 * @return
+	 */
+	public int asShifts()
+	{
+		if(alphabetizedLines!=null)
+		{
+			return alphabetizedLines.size();
+		}
+		return 0;
 	}
 }

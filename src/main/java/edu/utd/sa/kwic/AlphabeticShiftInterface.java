@@ -18,4 +18,11 @@ public interface AlphabeticShiftInterface {
 	 * @return
 	 */
 	public String ith(int i);
+
+	/**
+	 * This method returns number of shifts available for given input set.
+	 * @return
+	 */
+	public int asShifts();
+
 }
