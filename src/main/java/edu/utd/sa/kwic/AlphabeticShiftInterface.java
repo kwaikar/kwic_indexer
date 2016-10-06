@@ -24,5 +24,12 @@ public interface AlphabeticShiftInterface {
 	 * @return
 	 */
 	public int asShifts();
+	
+	/**
+	 * Helper method for printing unsortedshifts
+	 * @param circularShifts
+	 * @return
+	 */
+	List<String> getUnsortedShifts(List<CircularShiftInterface> circularShifts);
 
 }

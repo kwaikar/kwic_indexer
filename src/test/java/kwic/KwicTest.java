@@ -60,9 +60,8 @@ public class KwicTest {
 		ls.setchar(1, 2, 3, 'e');
 		CircularShiftInterface cs = new CircularShift();
 		cs.setup(ls, 1);
-AlphabeticShift as = new AlphabeticShift();
-as.alpha(Collections.singletonList(cs));
-
+		AlphabeticShift as = new AlphabeticShift();
+		as.alpha(Collections.singletonList(cs));
 	
 	}
 
