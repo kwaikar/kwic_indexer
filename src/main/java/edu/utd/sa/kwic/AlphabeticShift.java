@@ -2,7 +2,6 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -15,9 +14,10 @@ public class AlphabeticShift implements AlphabeticShiftInterface{
 	 * This function creates alphabetized shifted entries.
 	 * @param circularShifts
 	 */
-	public void alpha(List<CircularShiftInterface> circularShifts)
+	public void alpha(List<String> circularShifts)
 	{
-		alphabetizedLines= getUnsortedShifts(circularShifts);
+
+			alphabetizedLines.addAll( circularShifts);
 		Collections.sort(alphabetizedLines);
 	}
 	/**
@@ -25,27 +25,7 @@ public class AlphabeticShift implements AlphabeticShiftInterface{
 	 * @param circularShifts
 	 * @return
 	 */
-	public List<String> getUnsortedShifts(List<CircularShiftInterface> circularShifts) {
-		List<String> list = new LinkedList<String>();
-		for (CircularShiftInterface csInt : circularShifts) {
 
-			for (int s=1;s<=csInt.csShifts();s++) {
-			
-				StringBuilder line = new StringBuilder();
-				for (int w = 1; w <= csInt.csWords(s); w++) {
-					int charPos=1;
-					while (csInt.csCharAt(s, w, charPos) != ' ') {
-						line.append(csInt.csCharAt(s, w, charPos));
-						charPos++;
-					}
-					line.append(" ");
-				}
-				list.add(line.toString());
-				
-			}
-		}
-		return list;
-	}
 	/**
 	 * This function returns sorted circular shift produced in ith iteration
 	 * @param i

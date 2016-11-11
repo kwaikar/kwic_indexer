@@ -26,7 +26,12 @@ public class Master {
 			List<CircularShiftInterface> circularShifts = getCircularShifts(lines);
 
 			AlphabeticShift as = new AlphabeticShift();
-			as.alpha(circularShifts);
+			List<String> circularShiftsStr= new LinkedList<String>();
+			for (CircularShiftInterface circularShiftInterface : circularShifts) {
+				circularShiftsStr.addAll(circularShiftInterface.getCircularShifts());
+			}
+			NoiseEliminator nse = new NoiseEliminator();
+			as.alpha(nse.getNoiseLessShifts(circularShiftsStr));
 			output(as);
 
 		} catch (IOException e) {

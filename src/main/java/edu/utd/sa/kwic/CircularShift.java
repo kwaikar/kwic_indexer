@@ -1,6 +1,8 @@
 package edu.utd.sa.kwic;
 
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * CircularShift Class that provides several methods for providing LineStorage
@@ -104,6 +106,25 @@ public class CircularShift implements CircularShiftInterface {
 		}
 	}
 	
+	public List<String> getCircularShifts() {
+		List<String> list = new LinkedList<String>();
+
+			for (int s=1;s<=this.csShifts();s++) {
+			
+				StringBuilder line = new StringBuilder();
+				for (int w = 1; w <= this.csWords(s); w++) {
+					int charPos=1;
+					while (this.csCharAt(s, w, charPos) != ' ') {
+						line.append(this.csCharAt(s, w, charPos));
+						charPos++;
+					}
+					line.append(" ");
+				}
+				list.add(line.toString());
+				
+		}
+		return list;
+	}
 	/**
 	 * Returns total number of shifts available for the line 
 	 * @return

@@ -11,7 +11,7 @@ public interface AlphabeticShiftInterface {
 	 * This function creates alphabetized shifted entries.
 	 * @param circularShifts
 	 */
-	public void alpha(List<CircularShiftInterface> circularShifts);
+	public void alpha(List<String> circularShifts);
 	/**
 	 * This function returns sorted circular shift produced in ith iteration
 	 * @param i
@@ -25,11 +25,6 @@ public interface AlphabeticShiftInterface {
 	 */
 	public int asShifts();
 	
-	/**
-	 * Helper method for printing unsortedshifts
-	 * @param circularShifts
-	 * @return
-	 */
-	List<String> getUnsortedShifts(List<CircularShiftInterface> circularShifts);
+ 
 
 }

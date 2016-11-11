@@ -1,5 +1,6 @@
 package edu.utd.sa.kwic;
 
+import java.util.List;
 
 /**
  * CircularShift Class that provides several methods for providing LineStorage
@@ -50,5 +51,9 @@ public interface CircularShiftInterface {
 	 * @return
 	 */
 	public int csShifts() ;
+	
+
+	
+	public List<String> getCircularShifts();
 }
 
